@@ -1,0 +1,33 @@
+﻿@model ShoppingCart.ViewModel.LoginViewModel
+@{
+    ViewBag.Title = "Login";
+
+}
+<style>
+    .LFont{
+    font-family:Verdana;
+
+    }
+</style>
+<div class="col-md-6">
+    @using (Html.BeginForm("Login", "Account"))
+    {
+        <div style="color:red;">@Html.ValidationSummary()</div>
+        <div class="row">
+            <!--Show details are saved successfully message-->
+            <div class="col-lg-12">@ViewBag.Message</div>
+        </div><br />
+
+        <div class="row" style="text-align:center">
+            <div class="col-lg-2 LFont">@Html.LabelFor(a => a.Email)</div>
+            <div class="col-lg-10" style="width:auto;">@Html.TextBoxFor(a => a.Email, new { @class = "form-control" })</div>
+        </div><br />
+        <div class="row">
+            <div class="col-lg-2 LFont">@Html.LabelFor(a => a.Password)</div>
+            <div class="col-lg-10" style="width:auto;">@Html.TextBoxFor(a => a.Password, new { @class = "form-control", type = "Password" })</div>
+        </div><br />
+        <div class="row col-md-8" style="text-align:center">
+            <input type="submit" value="Login" class="btn btn-info LFont" /></div>
+            }
+
+ </div>

@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laptop Shopping Store</title>
+    <link href="~/Content/MainCSSLayout.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body style="padding-top:5px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-6">
+                <div class="logo">
+                    <h1><a href="#">Laptop <span>Shopping Store</span></a></h1>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-6">
+                <div class="account">
+                    <ul>
+                        <li>
+                            <div class="hidden-xs">
+
+                            </div>
+
+                            <div class="visible-xs">
+
+                            </div>
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row"  style="text-align:right">
+            <div class="col-md-12">
+                <div class="nav-menus">
+                    <ul class="nav nav-pills">
+                        <li class="active">
+                            @if (!Request.IsAuthenticated)
+                            {
+                                @Html.ActionLink("Register", "Register", "Account")
+                            }
+                        </li>
+                        <li class="active">
+                            @if (Request.IsAuthenticated)
+                            {
+
+                                @Html.ActionLink("Log Out", "Logout", "Account")
+                            }
+                            else
+                            {
+
+                                @Html.ActionLink("Login", "Login", "Account")
+                            }
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        @RenderBody()
+       
+    </div>
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

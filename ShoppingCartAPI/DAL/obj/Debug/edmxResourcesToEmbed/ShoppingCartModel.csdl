@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ShoppingCartDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="RegisterUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tbl_Invoice">
+    <Key>
+      <PropertyRef Name="Invoice_Id" />
+    </Key>
+    <Property Name="Invoice_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Invoice_Date" Type="DateTime" Precision="3" />
+    <Property Name="Invoice_TotalBill" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="UserId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Tbl_Order">
+    <Key>
+      <PropertyRef Name="Order_Id" />
+    </Key>
+    <Property Name="Order_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Order_Date" Type="DateTime" Precision="3" />
+    <Property Name="Order_Quantity" Type="Int32" />
+    <Property Name="Order_Bill" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Order_UnitPrice" Type="Int32" />
+    <Property Name="Product_Id" Type="Int32" />
+    <Property Name="Invoice_Id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Tbl_Product">
+    <Key>
+      <PropertyRef Name="Product_Id" />
+    </Key>
+    <Property Name="Product_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Product_Name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Product_Price" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Product_Desc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Product_Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="ShoppingCartDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="RegisterUsers" EntityType="Self.RegisterUser" />
+    <EntitySet Name="Tbl_Invoice" EntityType="Self.Tbl_Invoice" />
+    <EntitySet Name="Tbl_Order" EntityType="Self.Tbl_Order" />
+    <EntitySet Name="Tbl_Product" EntityType="Self.Tbl_Product" />
+  </EntityContainer>
+</Schema>

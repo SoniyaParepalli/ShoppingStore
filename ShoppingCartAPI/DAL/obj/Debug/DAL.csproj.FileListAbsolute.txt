@@ -1,0 +1,12 @@
+E:\BETTest\ShoppingCartAPI\DAL\bin\Debug\DAL.dll.config
+E:\BETTest\ShoppingCartAPI\DAL\bin\Debug\DAL.dll
+E:\BETTest\ShoppingCartAPI\DAL\bin\Debug\DAL.pdb
+E:\BETTest\ShoppingCartAPI\DAL\bin\Debug\EntityFramework.dll
+E:\BETTest\ShoppingCartAPI\DAL\bin\Debug\EntityFramework.SqlServer.dll
+E:\BETTest\ShoppingCartAPI\DAL\bin\Debug\EntityFramework.xml
+E:\BETTest\ShoppingCartAPI\DAL\bin\Debug\EntityFramework.SqlServer.xml
+E:\BETTest\ShoppingCartAPI\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+E:\BETTest\ShoppingCartAPI\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+E:\BETTest\ShoppingCartAPI\DAL\obj\Debug\DAL.csproj.CopyComplete
+E:\BETTest\ShoppingCartAPI\DAL\obj\Debug\DAL.dll
+E:\BETTest\ShoppingCartAPI\DAL\obj\Debug\DAL.pdb

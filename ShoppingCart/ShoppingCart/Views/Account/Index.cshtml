@@ -1,0 +1,51 @@
+﻿
+@model IEnumerable<ShoppingCart.Models.Product>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@if (Request.IsAuthenticated)
+{
+
+    <div class="row" style="text-align:right"> <span>Welcome @Html.Encode(User.Identity.Name) </span></div>
+    <div class="row">
+        <div class="col-lg-12">@ViewBag.Message</div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-lg-10 col-md-10 col-sm-10">
+            @if (TempData["total"] == null)
+            {
+
+                <h3>
+                    Total Bill: R0
+                </h3>
+            }
+            else
+            {
+                <h3> Total Bill: @TempData["total"] Rs</h3>
+
+            }
+
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <h3 style="color:#808080; font-family:'Arial Rounded MT';text-align:center"> <span class="btn btn-info">@Html.ActionLink("Check Out", "Checkout", "Account")</span></h3>
+        </div>
+    </div>
+    <div class="row" style="margin-bottom:100px;">
+        @if (Model != null)
+        {
+            foreach (var item in Model)
+            {
+                <div class="col-lg-4 col-md-4" style="height:200px;margin-top:100px">
+
+                    <img class="img img-responsive cimg" src="@Url.Content(item.Product_Image)" style=" height:100%;width:100% ;border-radius:50px 50px 50px 50px" />
+                    <h3 style="color:#808080; font-family:'Arial Rounded MT';text-align:center">@item.Product_Name <small>R @item.Product_Price</small></h3>
+                    <h4 style="color:#808080; font-family:'Arial Rounded MT';text-align:center"> <span class="btn btn-default">@Html.ActionLink("Add To Cart", "AddToCart", new { id = @item.Product_Id })</span></h4>
+                </div>
+            }
+        }
+    </div>
+}
+
